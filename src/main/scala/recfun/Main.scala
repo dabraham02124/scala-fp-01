@@ -22,7 +22,7 @@ object Main {
     def balance(chars: List[Char]): Boolean = {
     def innerBalance(chars: List[Char], x: Int): Boolean = {
       if (x < 0) false
-      else if (chars.isEmpty) if (0 == x) true else false
+      else if (chars.isEmpty) (0 == x)
       else if (chars.head == '(') innerBalance(chars.tail, x+1)
       else if (chars.head == ')') innerBalance(chars.tail, x-1)
       else innerBalance(chars.tail, x)
